@@ -1,0 +1,17 @@
+{
+  "name": "sortly-ai-website",
+  "version": "1.0.0",
+  "description": "Sortly.AI — AI-powered drive organizer. SaaS site with Stripe subscriptions and one-time payments.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "setup:stripe": "node scripts/setup-stripe.js"
+  },
+  "keywords": ["stripe", "saas", "sortly", "ai", "payments"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "stripe": "^16.0.0"
+  }
+}
