@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Successful — Sortly.AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <section class="result-page">
+    <div class="result-card">
+      <div class="result-icon">🎉</div>
+      <h1>Payment successful!</h1>
+      <p id="resultText">Your Sortly.AI account is being set up. Check your email for details.</p>
+      <div id="resultDetail" class="result-detail"></div>
+      <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+  </section>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("session_id");
+    if (id) {
+      fetch("/api/session/" + id)
+        .then((r) => r.json())
+        .then((d) => {
+          if (d.error) return;
+          const kind = d.subscription ? "Subscription" : "One-time purchase";
+          document.getElementById("resultDetail").innerHTML =
+            `<p><strong>${kind}</strong> · ${(d.amount_total / 100).toFixed(2)} ${(d.currency||"usd").toUpperCase()}</p>` +
+            (d.customer_email ? `<p>Email: ${d.customer_email}</p>` : "");
+        })
+        .catch(() => {});
+    }
+  </script>
+</body>
+</html>
