@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Sortly.AI</title>
+  <meta name="description" content="Choose the right Sortly.AI plan for you. Free, Personal, or Business." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand"><span class="brand-dot"></span> Sortly<span class="accent">.AI</span></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/pricing" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section section-alt" style="padding-top:80px;">
+    <div class="container" style="max-width:1040px;">
+      <h2 class="section-title">Choose your plan</h2>
+      <p class="section-sub">Start free, upgrade anytime. Cancel whenever.</p>
+      <div class="pricing-grid">
+        <div class="plan">
+          <h3>Free</h3>
+          <div class="price">$0<span>/mo</span></div>
+          <ul>
+            <li>1 drive connected</li>
+            <li>100 files sorted / month</li>
+            <li>Standard folder suggestions</li>
+            <li>Community support</li>
+          </ul>
+          <button class="btn btn-ghost" data-plan="free">Choose Free</button>
+        </div>
+        <div class="plan featured">
+          <span class="badge">Most Popular</span>
+          <h3>Personal</h3>
+          <div class="price">$9<span>/mo</span></div>
+          <ul>
+            <li>2 drives connected</li>
+            <li>Unlimited sorting</li>
+            <li>Smart AI classification</li>
+            <li>Custom folder rules</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="btn btn-primary" data-plan="personal">Start Personal</button>
+        </div>
+        <div class="plan">
+          <h3>Business</h3>
+          <div class="price">$29<span>/mo</span></div>
+          <ul>
+            <li>Unlimited drives &amp; teams</li>
+            <li>Auto-sorting schedules</li>
+            <li>Advanced AI rules</li>
+            <li>Shared team workspaces</li>
+            <li>Dedicated support</li>
+          </ul>
+          <button class="btn btn-ghost" data-plan="business">Start Business</button>
+        </div>
+      </div>
+
+      <div class="credits-box">
+        <h3>Buy Credits — one-time ⚡</h3>
+        <p>Extra one-time sorting tasks. No subscription required.</p>
+        <button class="btn btn-outline" data-plan="credits">Buy Credits — $10</button>
+      </div>
+
+      <p id="formError" class="form-error" style="display:none;"></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><p>© 2026 Sortly.AI. Secure payments by Stripe.</p></div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
